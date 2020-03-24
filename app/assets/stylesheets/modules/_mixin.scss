@@ -1,0 +1,11 @@
+/* 高さ幅指定 */
+@mixin height_width($height, $width){
+  height: $height;
+  width: $width;
+}
+
+/* ブロック横並び両端寄せ */
+@mixin flexbox_space-between{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,19 @@
+.header{
+  @include height_width(80px, 100%);
+  box-shadow: 2px 2px 4px gray;
+  display: flex;
+  justify-content: space-between;
+  &__inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__tittle{
+      float: left;
+      font-size: 36px;
+      padding: 20px 40px;
+    }
+    &__right{
+      display: block;  
+    }
+  }
+}
