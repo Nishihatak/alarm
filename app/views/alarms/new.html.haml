@@ -2,4 +2,30 @@
 
 %main.content
   .content__inner
-    
+    = form_with(model: @feeling , data: { remote: false }) do |f|
+      .form-box
+        .form_box__feeling
+          .form_box__feeling--feel-title
+            起きたときの気分
+          .form_box__feeling--feel-input
+            = f.number_field :feel, placeholder:  '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__feeling--sleep-title
+            すんなり眠れた
+          .form_box__feeling--sleep-input
+            = f.number_field :sleep, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__feeling--awake-title
+            スッキリ起きた
+          .form_box__feeling--awake-input
+            = f.number_field :awake, placeholder:  '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__feeling--tried-title
+            疲れが取れた
+          .form_box__feeling--tired-input
+            = f.number_field :tired, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__feeling--body-title
+            身体の重さ
+          .form_box__feeling--body-input
+            = f.number_field :body, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__feeling--memo
+            = f.text_field :memo, placeholder: "気になったことを記入してください"
+          .form_box__feeling--submit
+            = f.submit "保存する"
