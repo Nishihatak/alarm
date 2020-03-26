@@ -1,0 +1,18 @@
+= render "shared/header"
+
+%main.content
+  .content__inner
+    .content__inner__time
+      #clock_frame
+        / 日付部分
+        %span#clock_date
+        / 時刻部分
+        %span#clock_time
+
+      .content__inner__time__alarm
+        %input.content__inner__time__alarm__input{type: "checkbox"}
+        13:00
+    .content__inner__alarmstop
+      = link_to "/alarms/new" do
+        アラームを止める
+

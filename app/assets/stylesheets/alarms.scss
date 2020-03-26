@@ -1,7 +1,29 @@
 .content{
   text-align: center;
+  font-family: $main_font;
   &__inner{
     padding-top:30px;
+  }
+  .form_box{
+    border-color: steelblue;
+    border-style: solid;
+    width: 70%;
+    margin: auto;
+    &__title{
+      font-size: 30px;
+    }
+    &__rate{
+      display: flex;
+      width:80%;
+      margin:auto;
+      &--white{
+        background-color: rgb(195, 234, 250);
+      }
+
+      &__memo{
+        overflow: inherit;
+      }
+    }
   } 
 }
 

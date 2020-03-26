@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_090504) do
+ActiveRecord::Schema.define(version: 2020_03_24_120101) do
 
-  create_table "feelings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "feel", null: false
     t.integer "awake", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_090504) do
     t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_feelings_on_user_id"
+    t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,5 +37,5 @@ ActiveRecord::Schema.define(version: 2020_03_24_090504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "feelings", "users"
+  add_foreign_key "rates", "users"
 end
