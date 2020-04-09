@@ -3,25 +3,48 @@
   font-family: $main_font;
   &__inner{
     padding-top:30px;
+    &__link{
+      display: inline-block;
+      @include border_set;
+      @include height_width(50px, 300px);
+      margin-top: 30px;
+      text-align: center;
+      background-color: steelblue;
+      &__letter{
+        color: white;
+        padding-top:16px;
+      }
+    }
   }
   .form_box{
     border-color: steelblue;
     border-style: solid;
-    width: 70%;
+    width: 40%;
     margin: auto;
     &__title{
+      padding:20px;
       font-size: 30px;
     }
     &__rate{
       display: flex;
       width:80%;
       margin:auto;
+      padding:10px;
       &--white{
         background-color: rgb(195, 234, 250);
       }
+      &__title{
+        width: 300px;
+        padding-right: 30px;
+      }
+      &__input{
 
-      &__memo{
-        overflow: inherit;
+      }
+    }
+    &__memo{
+      overflow: inherit;
+      &__input{
+        padding-bottom:20px;
       }
     }
   } 

@@ -1,13 +1,13 @@
 %header.header
   .header__inner
     .header__inner__left
-      .header__inner__left__tittle
+      .header__inner__left__title
         = link_to root_path do
           Alarm
     %ul.header__inner__right
       - if user_signed_in?
         %li.header__inner__right__user
-          = link_to link_to users_path, class: ".header__innner__user" do
+          = link_to "#", class: ".header__innner__user" do
             User 
       - else
         %li.header__inner__right__singup

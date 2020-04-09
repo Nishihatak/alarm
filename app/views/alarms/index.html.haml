@@ -2,42 +2,17 @@
 
 %main.content
   .content__inner
+    .content__inner__time
+      #clock_frame
+        / 日付部分
+        %span#clock_date
+        / 時刻部分
+        %span#clock_time
 
-  .form_box
-    %h2.form_box__title
-      今日の記録
-    .form_box__rate.form_box__rate--white
-      .form_box__rate__feel-title
-        起きたときの気分
-      .form_box__rate__feel-input
-        3 
-    .form_box__rate
-      .form_box__rate__sleep-title
-        すんなり眠れた
-      .form_box__rate__sleep-input
-        3 
-    .form_box__rate.form_box__rate--white
-      .form_box__rate__awake-title
-        スッキリ起きた
-      .form_box__rate__awake-input
-        3
-    .form_box__rate
-      .form_box__rate__tried-title
-        疲れが取れた
-      .form_box__rate__tired-input
-        3 
-    .form_box__rate.form_box__rate--white
-      .form_box__rate__body-title
-        身体の重さ
-      .form_box__rate__body-input
-        3
-    .form_box__memo
-      .form_box__memo-title
-        メモ
-      .form_box__memo-input
-        ・今日は買い物に行こう。
-        ・散歩に行こう
-        ・電気代を払おう
-    .form_box__rerutn
-      = link_to "#" do
-        トップページに戻る
+      .content__inner__time__alarm
+        %input.content__inner__time__alarm__input{type: "checkbox"}
+        13:00
+    .content__inner__alarmstop
+      = link_to "/alarms/new" do
+        アラームを止める
+

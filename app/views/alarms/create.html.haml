@@ -1,0 +1,43 @@
+= render "shared/header"
+
+%main.content
+  .content__inner
+
+  .form_box
+    %h2.form_box__title
+      今日の記録
+    .form_box__rate.form_box__rate--white
+      .form_box__rate__title
+        起きたときの気分
+      .form_box__rate__input
+        = @rate.feel
+    .form_box__rate
+      .form_box__rate__title
+        すんなり眠れた
+      .form_box__rate__input
+        = @rate.sleep
+    .form_box__rate.form_box__rate--white
+      .form_box__rate__title
+        スッキリ起きた
+      .form_box__rate__input
+        = @rate.awake
+    .form_box__rate
+      .form_box__rate__title
+        疲れが取れた
+      .form_box__rate__input
+        = @rate.tired 
+    .form_box__rate.form_box__rate--white
+      .form_box__rate__title
+        身体の重さ
+      .form_box__rate__input
+        = @rate.body
+    .form_box__memo
+      %h2.form_box__title.form_box__memo__title
+        メモ
+      .form_box__memo__input
+        = @rate.memo
+        
+  .content__inner__link
+    = link_to "#",class: "link " do
+      .content__inner__link__letter
+        トップページに戻る
