@@ -38,16 +38,25 @@
         padding-right: 30px;
       }
       &__input{
-
+        padding-left: 20px;
+        &__label{
+          padding-left: 10px;
+        }
       }
     }
     &__memo{
       overflow: inherit;
       &__input{
         padding-bottom:20px;
+        white-space: pre-wrap;
       }
     }
   } 
+}
+
+.input-memo{
+  height: 150px;
+  width: 400px;
 }
 
 #clock_frame{

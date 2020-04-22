@@ -35,7 +35,7 @@
       %h2.form_box__title.form_box__memo__title
         メモ
       .form_box__memo__input
-        = @rate.memo
+        = simple_format(@rate.memo)
         
   .content__inner__link
     = link_to "#",class: "link " do

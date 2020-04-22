@@ -8,6 +8,7 @@ class AlarmsController < ApplicationController
   end
 
   def create
+    binding.pry
     @rate = Rate.create(params_rate)
   end
 

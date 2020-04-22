@@ -10,7 +10,9 @@
           .form_box__rate__feel-title
             起きたときの気分
           .form_box__rate__feel-input
-            = f.number_field :feel, placeholder:  '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+            - Rate.feels.each do | feel |
+              = f.label feel[0],class: ".form_box__rate__feel-input__label"
+              = f.radio_button :feel, feel[0]
         .form_box__rate
           .form_box__rate__sleep-title
             すんなり眠れた
@@ -32,9 +34,9 @@
           .form_box__rate__body-input
             = f.number_field :body, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
         .form_box__rate
-          .form_box__rate__memo-title
+          .form_box__memo-title
             メモ
-          .form_box__rate__memo-input
-          = f.text_field :memo, placeholder: "気になったことを記入してください"
+          .form_box__memo__input
+          = f.text_area :memo, placeholder: "気になったことを記入してください" ,class: "input-memo"
         .form_box__rate__submit
-          = f.submit "保存する"
+          = f.submit "保存する",type: 'button', onclick: 'submit();'
