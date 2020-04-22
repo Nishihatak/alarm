@@ -9,30 +9,38 @@
         .form_box__rate
           .form_box__rate__feel-title
             起きたときの気分
-          .form_box__rate__feel-input
+          .form_box__rate__input
             - Rate.feels.each do | feel |
-              = f.label feel[0],class: ".form_box__rate__feel-input__label"
+              = f.label feel[0],class: ".form_box__rate__input__label"
               = f.radio_button :feel, feel[0]
         .form_box__rate
           .form_box__rate__sleep-title
-            すんなり眠れた
-          .form_box__rate__sleep-input
-            = f.number_field :sleep, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+            睡眠の質
+          .form_box__rate__input
+            - Rate.sleeps.each do | sleep |
+              = f.label sleep[0],class: ".form_box__rate__input__label"
+              = f.radio_button :sleep, sleep[0]
         .form_box__rate
           .form_box__rate__awake-title
-            スッキリ起きた
-          .form_box__rate__awake-input
-            = f.number_field :awake, placeholder:  '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+            目覚めたとき
+          .form_box__rate__input
+            - Rate.awakes.each do | awake |
+              = f.label awake[0],class: ".form_box__rate__input__label"
+              = f.radio_button :awake, awake[0]
         .form_box__rate
           .form_box__rate__tried-title
             疲れが取れた
-          .form_box__rate__tired-input
-            = f.number_field :tired, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__rate__input
+            - Rate.tireds.each do | tired |
+              = f.label tired[0],class: ".form_box__rate__input__label"
+              = f.radio_button :tired, tired[0]
         .form_box__rate
           .form_box__rate__body-title
             身体の重さ
-          .form_box__rate__body-input
-            = f.number_field :body, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } 
+          .form_box__rate__input
+            - Rate.bodies.each do | body |
+              = f.label body[0],class: ".form_box__rate__input__label"
+              = f.radio_button :body, body[0]
         .form_box__rate
           .form_box__memo-title
             メモ
