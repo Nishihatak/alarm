@@ -1,7 +1,64 @@
 .content{
   text-align: center;
-
+  font-family: $main_font;
   &__inner{
     padding-top:30px;
+    &__link{
+      display: inline-block;
+      @include border_set;
+      @include height_width(50px, 300px);
+      margin-top: 30px;
+      text-align: center;
+      background-color: steelblue;
+      &__letter{
+        color: white;
+        padding-top:16px;
+      }
+    }
+  }
+  .form_box{
+    border-color: steelblue;
+    border-style: solid;
+    width: 40%;
+    margin: auto;
+    &__title{
+      padding:20px;
+      font-size: 30px;
+    }
+    &__rate{
+      display: flex;
+      width:80%;
+      margin:auto;
+      padding:10px;
+      &--white{
+        background-color: rgb(195, 234, 250);
+      }
+      &__title{
+        width: 300px;
+        padding-right: 30px;
+      }
+      &__input{
+        padding-left: 20px;
+        &__label{
+          padding-left: 10px;
+        }
+      }
+    }
+    &__memo{
+      overflow: inherit;
+      &__input{
+        padding-bottom:20px;
+        white-space: pre-wrap;
+      }
+    }
   } 
+}
+
+.input-memo{
+  height: 150px;
+  width: 400px;
+}
+
+#clock_frame{
+  text-align: center;
 }

@@ -1,8 +1,16 @@
 %header.header
   .header__inner
-    .header__inner__tittle
-      = link_to root_path do
-        Alarm
-    .header__inner__user
-      = link_to "#", class: ".header__innner__user" do
-        User 
+    .header__inner__left
+      .header__inner__left__title
+        = link_to root_path do
+          Alarm
+    %ul.header__inner__right
+      - if user_signed_in?
+        %li.header__inner__right__user
+          = link_to "#", class: ".header__innner__user" do
+            User 
+      - else
+        %li.header__inner__right__singup
+          = link_to "新規登録", new_user_registration_path
+        %li.header__inner__right__signin
+          = link_to "ログイン", new_user_session_path
