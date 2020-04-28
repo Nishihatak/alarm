@@ -9,12 +9,5 @@
         / 時刻部分
         %span#clock_time
 
-      .content__inner__time__alarm
-        %input.content__inner__time__alarm__input{type: "checkbox"}
-        = form_with(model: @alarm_time, url: alarm_path(current_user.id), method: :PUT, local: true) do |f|
-          =f.time_select :time, prompt:"--",ignore_data:true
-          =f.submit "保存する",type: 'button', onclick: 'submit()';
-    .content__inner__alarmstop
-      = link_to "/alarms/new" do
-        アラームを止める
-
+  = link_to "/alarms/show" do
+    アラームを設定する
