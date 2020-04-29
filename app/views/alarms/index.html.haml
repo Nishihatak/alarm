@@ -8,6 +8,11 @@
         %span#clock_date
         / 時刻部分
         %span#clock_time
-
-  = link_to "/alarms/show" do
-    アラームを設定する
+  -if user_signed_in?
+    = link_to alarm_path(@user.id) do
+      アラームを設定する
+  -else
+    %li.header__inner__right__singup
+      = link_to "新規登録", new_user_registration_path
+    %li.header__inner__right__signin
+      = link_to "ログイン", new_user_session_path
