@@ -1,4 +1,3 @@
-= render "shared/header"
 %main.content
   .content__inner
     .content__inner__time
@@ -10,9 +9,9 @@
 
       .content__inner__time__alarm
         %input.content__inner__time__alarm__input{type: "checkbox"}
-        = form_with(model: @alarm_time, url: alarm_path(current_user), method: :PATCH, local: true) do |f|
+        = form_with(model: @alarm_time, url: alarms_path(current_user), method: :PACTH, local: true) do |f|
           =f.time_select :time, prompt:"--",ignore_data:true
           =f.submit "保存する",type: 'button', onclick: 'submit()';
     .content__inner__alarmstop
       = link_to "/alarms/new" do
-        アラームを止めるaaaaadn;biiiiiiifaaa
+        アラームを止める

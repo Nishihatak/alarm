@@ -8,7 +8,9 @@
       - if user_signed_in?
         %li.header__inner__right__user
           = link_to "#", class: ".header__innner__user" do
-            User 
+            User
+          = link_to destroy_user_session_path, method: :delete, class: "logout-btn" do
+            ログアウト
       - else
         %li.header__inner__right__singup
           = link_to "新規登録", new_user_registration_path
