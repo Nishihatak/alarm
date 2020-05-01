@@ -9,7 +9,7 @@
         / 時刻部分
         %span#clock_time
   -if user_signed_in?
-    = link_to alarm_path(@user.id) do
+    = link_to alarm_path(@user.id) ,method: :GET do
       アラームを設定する
   -else
     %li.header__inner__right__singup

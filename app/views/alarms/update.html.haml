@@ -9,7 +9,7 @@
 
       .content__inner__time__alarm
         %input.content__inner__time__alarm__input{type: "checkbox"}
-        = form_with(model: @alarm_time, url: alarms_path(current_user), method: :PUT, local: true) do |f|
+        = form_with(model: @alarm_time, url: alarms_path(current_user), method: :PACTH, local: true) do |f|
           =f.time_select :time, prompt:"--",ignore_data:true
           =f.submit "保存する",type: 'button', onclick: 'submit()';
     .content__inner__alarmstop
