@@ -67,3 +67,4 @@ gem "font-awesome-sass"
 gem 'erb2haml'
 gem 'pry-rails'
 gem 'jquery-rails'
+gem 'rails-i18n'

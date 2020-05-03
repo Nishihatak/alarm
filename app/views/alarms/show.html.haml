@@ -12,7 +12,10 @@
         %input.content__inner__time__alarm__input{type: "checkbox"}
         = form_with(model: @alarm_time, url: alarm_path(current_user), method: :PATCH, local: true) do |f|
           =f.time_select :time, prompt:"--",ignore_data:true
+          .error-text
+            - @alarm_time.errors.full_messages_for(:time).each do |alarm|
+              = alarm
           =f.submit "保存する",type: 'button', onclick: 'submit()';
     .content__inner__alarmstop
       = link_to "/alarms/new" do
-        アラームを止めるaaaaadn;biiiiiiifaaa
+        アラームを止める

@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      alarm_time: アラーム
+      rate: 評価
+    attributes:
+      alarm_time:
+        time: 時間
+      rate:
+        feel: ''
+        awake: ''
+        sleep: ''
+        tired: ''
+        body: ''
