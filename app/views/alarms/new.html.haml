@@ -9,20 +9,30 @@
         .form_box__rate
           .form_box__rate__title
             起きたときの気分
+            .error-text
+              - @rate.errors.full_messages_for(:feel).each do |rate|
+                = rate
           .form_box__rate__input
             - Rate.feels.each do | feel |
               = f.label feel[0],class: "form_box__rate__input__label"
-              = f.radio_button :feel, feel[0]
+              = f.radio_button :feel, feel[0]             
         .form_box__rate
           .form_box__rate__title
             睡眠の質
+            .error-text
+              - @rate.errors.full_messages_for(:sleep).each do |rate|
+                = rate
           .form_box__rate__input
             - Rate.sleeps.each do | sleep |
               = f.label sleep[0],class: "form_box__rate__input__label"
               = f.radio_button :sleep, sleep[0]
+              
         .form_box__rate
           .form_box__rate__title
             目覚めたとき
+            .error-text
+              - @rate.errors.full_messages_for(:awake).each do |rate|
+                = rate
           .form_box__rate__input
             - Rate.awakes.each do | awake |
               = f.label awake[0],class: "form_box__rate__input__label"
@@ -30,6 +40,9 @@
         .form_box__rate
           .form_box__rate__title
             疲れが取れた
+            .error-text
+              - @rate.errors.full_messages_for(:tired).each do |rate|
+                = rate
           .form_box__rate__input
             - Rate.tireds.each do | tired |
               = f.label tired[0],class: "form_box__rate__input__label"
@@ -37,6 +50,9 @@
         .form_box__rate
           .form_box__rate__title
             身体の重さ
+            .error-text
+              - @rate.errors.full_messages_for(:body).each do |rate|
+                = rate
           .form_box__rate__input
             - Rate.bodies.each do | body |
               = f.label body[0],class: "form_box__rate__input__label"

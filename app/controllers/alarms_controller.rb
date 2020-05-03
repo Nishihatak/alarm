@@ -3,10 +3,10 @@ class AlarmsController < ApplicationController
   before_action :show, only: :update
   
   def index
-    @user = User.find(current_user.id) 
-    @alarm_time = @user.alarm_time
-
-    binding.pry
+    if user_signed_in?  
+      @user = User.find(current_user.id) 
+      @alarm_time = @user.alarm_time
+    end
   end
 
   def new
@@ -14,22 +14,33 @@ class AlarmsController < ApplicationController
   end
 
   def create
+    @rate = Rate.new(params_rate)
+    unless @rate.valid?
+      render action: :new  and return 
+    end
     @rate = Rate.create(params_rate)
   end
 
   def update
-    @rate = Rate.new
-    @user = User.find(current_user.id) 
-    @alarm_time = @user.alarm_time
+    unless @alarm_time.valid?
+      render action: :show  and return 
+    end
+    @alarm_time =  AlarmTime.find_by(user_id: current_user.id)
     if @alarm_time
-      @alarm_time = AlarmTime.update(params_alarm)
+      @alarm_times = @alarm_time.update(params_alarm)
     else
       @alarm_time = AlarmTime.create(params_alarm)
     end
+    # @alarm_time = Time.new(
+    #   params[:alarm_time][:"time(1i)"].to_i,
+    #   params[:alarm_time][:"time(2i)"].to_i,
+    #   params[:alarm_time][:"time(3i)"].to_i,
+    #   params[:alarm_time][:"time(4i)"].to_i,
+    #   params[:alarm_time][:"time(5i)"].to_i
+    # )
   end
 
   def show
-    @rate = Rate.new
     @user = User.find(current_user.id) 
     @alarm_time = @user.alarm_time
     unless  @alarm_time
